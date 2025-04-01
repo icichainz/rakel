@@ -1,7 +1,7 @@
 package db
 
 import (
-    "gorm.io/driver/sqlite"
+    "github.com/glebarez/sqlite" // Change to this import
     "gorm.io/gorm"
 )
 
@@ -21,7 +21,7 @@ func InitDB() {
     if err != nil {
         panic("Failed to connect to database")
     }
-
+    
     // Auto-migrate the Paste model
     DB.AutoMigrate(&Paste{})
 }
